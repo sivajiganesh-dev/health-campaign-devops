@@ -1,26 +1,26 @@
 # Replace with the name which you want to give to your EKS cluster
 # Cluster name can have only lowercase alphanumeric characters and hyphens
 # For example: "digit-demo"
-cluster_name: "healthdemo-k8supgrade"
+cluster_name: "healthtest-k8supgrade"
 
 # Replace with ssh key name you want
-ssh_key_name: "healthdemo-k8supgrade-ssh-key" 
+ssh_key_name: "healthtest-k8supgrade-ssh-key"
 
 # Replace with public key which you want to add in your EC2 machines # ssh key which you want to add in your EC2 machines
-public_ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCQqsG1qCPzOLwjoqLmE0f50caH2bp6KndQ8DXTQzvj09vkSG5Wy6rSLMcq94um2BzeRhbq1aADpEXIb2BOY+mfpxsU0UFU4QWufPmGkGpQoM+ov67XnezQL5/DA0mqPrWOs39RAofOUhEtn4tbKlb8t+S023cI7ulX901p23+61r7dJQ557uFyHEJmgXX4CPy+Br+XAzRU7r8YmJ8h43Z5y+r4P3HD04XLQ9O6+FjYljabPKdj3VCdtbtz6xqPcUTRvSKX5iHzOQbqj7iSJ/RqysUSsYE1LCYD/7xfNHxnNU9qYuP3gPkWXsgBFE/PWlAuWCL6yvdjSRZLACVn5T77"
+public_ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDoljj3E3tD6DWfWBB4ToSnvhWg8JdMokz0VNwsi2pIuJuFrf9UYNdPP1AjCT3FuVgsmQSv31W9jwad6E9NU0GqIbJgwHmSKxjwDQCYuRgvUeEo5n4p80S6imba5V7sDRSy8TqC37M55DlNtzpP2bEYjDnOyGBZb3u5/wEGW5I+GKpexhcffLx7iTwxpLPjBlnyvJZ1rr3Q1p8F8fo8ZsxAs4Oxsd4KIJR8F7TaV1E/a/zS5z+subJZMx+fEVvHcY0OsDDFeNxI3D4PXygsFtqSAEdp3xxQ4j6vDcYr8lcDnIWd4gDLYietES7bMJ4lLw3YCfRAMrLvPe9BDwT6+SupyUAXUoNHoKoddwZhC3oNZo1Ur3We37sppwYbp/6wHNmZ5wFHlD18Iuqy1uRm9UOStQZYoDOKfp1g7Ef+BtulVju+Nag0yLmjWRGH4RFRKQdXMO7cGvWRnIwvJVeTuNzdO6j4xuPO1juQ3cUXJc+JQhCEEg0yoqc6Pyt6pLB5JNc="
 
 # Name you want to give to your Database
 # DB name must contain only alphanumeric characters
-db_name: "healthdemodb"
+db_name: "healthtestdb"
 
 # Replace with DB username you want
 # DB user name must contain only alphanumeric characters
-db_username: "healthdemo" 
+db_username: "healthtest"
 
 # Replace with Domain name you want for your web applications
-domain_name: "health-demo.digit.org"
+domain_name: "health-test.digit.org"
 
 # Replace with the name you want to give to your S3 bucket which is used to store the terraform states
-terraform_state_bucket_name: "healthdemo-k8supgrade-digit-buckets"
+terraform_state_bucket_name: "healthtest-k8supgrade-digit-buckets"
 
 
