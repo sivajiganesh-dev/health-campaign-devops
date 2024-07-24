@@ -7,7 +7,7 @@ cluster_name: "healthtest-k8supgrade"
 ssh_key_name: "healthtest-k8supgrade-ssh-key"
 
 # Replace with public key which you want to add in your EC2 machines # ssh key which you want to add in your EC2 machines
-public_ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDoljj3E3tD6DWfWBB4ToSnvhWg8JdMokz0VNwsi2pIuJuFrf9UYNdPP1AjCT3FuVgsmQSv31W9jwad6E9NU0GqIbJgwHmSKxjwDQCYuRgvUeEo5n4p80S6imba5V7sDRSy8TqC37M55DlNtzpP2bEYjDnOyGBZb3u5/wEGW5I+GKpexhcffLx7iTwxpLPjBlnyvJZ1rr3Q1p8F8fo8ZsxAs4Oxsd4KIJR8F7TaV1E/a/zS5z+subJZMx+fEVvHcY0OsDDFeNxI3D4PXygsFtqSAEdp3xxQ4j6vDcYr8lcDnIWd4gDLYietES7bMJ4lLw3YCfRAMrLvPe9BDwT6+SupyUAXUoNHoKoddwZhC3oNZo1Ur3We37sppwYbp/6wHNmZ5wFHlD18Iuqy1uRm9UOStQZYoDOKfp1g7Ef+BtulVju+Nag0yLmjWRGH4RFRKQdXMO7cGvWRnIwvJVeTuNzdO6j4xuPO1juQ3cUXJc+JQhCEEg0yoqc6Pyt6pLB5JNc="
+public_ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClTmEgWf6FCO+CVDdz79zKYuXSqANsiDHR3WHPVHtydwbXdNun917Q2Ir27Hd0/zA4r9/bowUN5nGeu1gVutDm3xjT4GQXFmHgmx09F2qLtB+LMulWs8FVE3hLPGyPpZHWbZnW8pCyFVd0X8SH+qJVs2w+0o/n3gY4Oj4wsFo0gSXLQanARgnbKIpWV23W3HD/jrS+8gixnx61+7+VFNlT4xiQL5/Quv0vR+lDsmAWJdUVHgntG1VQdzsBG+w9EHu0BO3Q5jkQNbh652YwU7xJBc6ojOLUGHKpSZq2gZxk/RnQlIdlq9DzZh0FL+qz/BaPjtJThWDEFI1DGE1idVMAx4HJDIPygP/8/abtBEL5h1+pb5HdAj+TNnE+I1pYW5gH5L7tRB4suOYAS2CT5IsqJpp/pyrDdhUXPI1j74DY6ZMhbQ+VKFjTyDldHDweR+5DRHzMkPKvV2u9bndljAIraah4YdsbAYL0vibfTrAbV3DhSTtjbRytJMV7yZ9o5sU="
 
 # Name you want to give to your Database
 # DB name must contain only alphanumeric characters
@@ -15,7 +15,7 @@ db_name: "healthtestdb"
 
 # Replace with DB username you want
 # DB user name must contain only alphanumeric characters
-db_username: "healthtest"
+db_username: "healthegovtest"
 
 # Replace with Domain name you want for your web applications
 domain_name: "health-test.digit.org"
