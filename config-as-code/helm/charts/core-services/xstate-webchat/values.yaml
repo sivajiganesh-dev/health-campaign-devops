@@ -74,6 +74,8 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: zuul
+  - name: EGOV_MDMS_SEARCH_ENDPOINT
+    value: "/mdms-v2/v1/_search"
   - name: URL_SHORTNER_HOST
     valueFrom:
       configMapKeyRef:
