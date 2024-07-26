@@ -1,107 +1,107 @@
 global:
-   domain: health-test.digit.org ## Add your Domain Name "Eg: site.mydomain.com" Do not use the dummy domain
-   setup: fullsetup
+  domain: health-test.digit.org ## Add your Domain Name "Eg: site.mydomain.com" Do not use the dummy domain
+  setup: fullsetup
 
 cluster-configs:
-    namespaces:  
-      create: true
-      values: [ backbone, cert-manager, egov, es-cluster, kafka-kraft, logging, monitoring, playground, zookeeper-cluster ]
-      
-    root-ingress:
-      cert-issuer: letsencrypt-prod
-    configmaps:
-        egov-config:
-            namespace: [ egov, monitoring ]
-            data:
-                db-host: healthtest-k8supgrade-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432 ## Add db-host name eg: egov-demo.database.azure.com
-                db-name: healthtestdb ## Add db-name
-                db-url: jdbc:postgresql://healthtest-k8supgrade-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432/healthtestdb ## example: jdbc:postgresql://egov-demo.postgres.database.azure.com:5432/egov_demo
-                domain: health-test.digit.org ## Add your Domain Name
-                egov-services-fqdn-name: https://health-test.digit.org/ ## Add your Domain Name
-                
-                egov-state-level-tenant-id: "mz"
-                s3-assets-bucket: "(pg-health-egov-assets|egov-health-playground-assets)"
-                es-host: "elasticsearch-data.es-cluster-6"
-                es-host-6: "elasticsearch-data.es-cluster-6"
-                es-indexer-host: "http://elasticsearch-data-v1.es-cluster-6:9200/"
-                es-indexer-host-8: "https://elasticsearch-data.es-cluster:9200/"
-                flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
-                kafka-brokers: "release-name-kafka-controller-headless.kafka-kraft:9092"
-                kafka-infra-brokers: "kafka-v2-infra.kafka-cluster:9092"
-                logging-level-jdbc: "DEBUG"
-                mobile-validation-workaround: "true"
-                serializers-timezone-in-ist: "true"
-                server-tomcat-max-connections: "500"
-                server-tomcat-max-threads: "10"
-                sms-enabled: "true"
-                spring-datasource-tomcat-initialSize: "1"
-                spring-datasource-tomcat-max-active: "2"
-                spring-jpa-show-sql: "true"
-                timezone: "UTC"
-                tracer-errors-provideexceptionindetails: "true"
-                egov-internal-microservice-user-uuid: fa0f820c-49df-46bb-8e62-8a0ec5d9af5e
+  namespaces:
+    create: true
+    values: [ backbone, cert-manager, egov, es-cluster, kafka-kraft, logging, monitoring, playground, zookeeper-cluster ]
 
-        egov-service-host:
-            namespace: [ egov, monitoring ]
-            data:
-              asset-services: "http://asset-services:8080/"
-              boundary-service: 'http://boundary-service.egov:8080/'
-              asset-services-maha: "http://asset-services-maha:8080/"
-              billing-service: "http://billing-service:8080/"
-              collection-services: "http://collection-services:8080/"
-              collection-masters: "http://collection-masters:8080/"
-              collection-search-indexer: "http://collection-search-indexer:8080/"
-              citizen-indexer: "http://citizen-indexer:8080/"
-              citizen-services: "http://citizen-services:8080/"
-              dashboard-analytics: "http://dashboard-analytics.egov:8080/"
-              dashboard-ingest: "http://dashboard-ingest.egov:8080/"
-              demand-services: "http://demand-services:8080/"
-              data-sync-employee: "http://data-sync-employee:8080/"
-              egov-common-masters: "http://egov-common-masters:8080/"
-              egf-masters: "http://egf-masters:8080/"
-              egf-master: "http://egf-master:8080/"
-              egf-instrument: "http://egf-instrument:8080/"
-              egf-voucher: "http://egf-voucher:8080/"
-              egf-bill: "http://egf-bill:8080/"
-              egov-enc-service: "http://egov-enc-service.egov:8080/"
-              egf-voucher-workflow: "http://egf-voucher-workflow:8080/"
-              egov-accesscontrol: "http://egov-accesscontrol:8080/"
-              egov-user: "http://egov-user:8080/"
-              egov-user-egov: "http://egov-user.egov:8080/"
-              egov-location: "http://egov-location:8080/"
-              egov-filestore: "http://egov-filestore:8080/"
-              egov-localization: "http://egov-localization:8080/"
-              egov-idgen: "http://egov-idgen:8080/"
-              egov-otp: "http://egov-otp:8080/"
-              egov-mdms-service: "http://mdms-v2:8080/"
-              mdms-v2: "http://mdms-v2:8080/"
-              egov-workflow: "http://egov-workflow:8080/"
-              egov-workflow-v2: "http://egov-workflow-v2:8080/"
-              egov-searcher: "http://egov-searcher:8080/"
-              egov-data-uploader: "http://egov-data-uploader:8080/"
-              egov-indexer: "http://egov-indexer:8080/"
-              egov-hrms: "http://egov-hrms:8080/"
-              es-client: "http://elasticsearch-data-v1.es-cluster:9200"
-              health-attendance: "http://health-attendance:8080/"
-              location: "http://location:8080/"
-              performance-assessment: "http://performance-assessment:8080/"
-              pdf-service: "http://pdf-service.egov:8080/"
-              report: "http://report:8080/"
-              user-otp: "http://user-otp:8080/"
-              minio-url: "https://minio-uat.digit.org/"
-              zuul: "http://zuul:8080/"
-              egov-url-shortening: "http://egov-url-shortening:8080/"
-              inbox: "http://inbox.egov:8080/"
-              pgr-services: "http://pgr-services.egov:8080/"
-              egov-pdf: "http://egov-pdf.egov:8080/"
-              audit-service: "http://audit-service:8080/"
-              project: "http://project:8080/"
-              product: "http://product:8080/"
-              household: "http://household:8080/"
-              individual: "http://individual:8080/"
-              stock: "http://stock:8080/"
-              facility: "http://facility:8080/"
-              service-request: "http://service-request:8080/"
+  root-ingress:
+    cert-issuer: letsencrypt-prod
+  configmaps:
+    egov-config:
+      namespace: [ egov, monitoring ]
+      data:
+        db-host: healthtest-k8supgrade-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432 ## Add db-host name eg: egov-demo.database.azure.com
+        db-name: healthtestdb ## Add db-name
+        db-url: jdbc:postgresql://healthtest-k8supgrade-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432/healthtestdb ## example: jdbc:postgresql://egov-demo.postgres.database.azure.com:5432/egov_demo
+        domain: health-test.digit.org ## Add your Domain Name
+        egov-services-fqdn-name: https://health-test.digit.org/ ## Add your Domain Name
+
+        egov-state-level-tenant-id: "mz"
+        s3-assets-bucket: "(pg-health-egov-assets|egov-health-playground-assets)"
+        es-host: "elasticsearch-data.es-cluster-6"
+        es-host-6: "elasticsearch-data.es-cluster-6"
+        es-indexer-host: "http://elasticsearch-data-v1.es-cluster-6:9200/"
+        es-indexer-host-8: "https://elasticsearch-data.es-cluster:9200/"
+        flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
+        kafka-brokers: "release-name-kafka-controller-headless.kafka-kraft:9092"
+        kafka-infra-brokers: "kafka-v2-infra.kafka-cluster:9092"
+        logging-level-jdbc: "DEBUG"
+        mobile-validation-workaround: "true"
+        serializers-timezone-in-ist: "true"
+        server-tomcat-max-connections: "500"
+        server-tomcat-max-threads: "10"
+        sms-enabled: "true"
+        spring-datasource-tomcat-initialSize: "1"
+        spring-datasource-tomcat-max-active: "2"
+        spring-jpa-show-sql: "true"
+        timezone: "UTC"
+        tracer-errors-provideexceptionindetails: "true"
+        egov-internal-microservice-user-uuid: fa0f820c-49df-46bb-8e62-8a0ec5d9af5e
+
+    egov-service-host:
+      namespace: [ egov, monitoring ]
+      data:
+        asset-services: "http://asset-services:8080/"
+        boundary-service: 'http://boundary-service.egov:8080/'
+        asset-services-maha: "http://asset-services-maha:8080/"
+        billing-service: "http://billing-service:8080/"
+        collection-services: "http://collection-services:8080/"
+        collection-masters: "http://collection-masters:8080/"
+        collection-search-indexer: "http://collection-search-indexer:8080/"
+        citizen-indexer: "http://citizen-indexer:8080/"
+        citizen-services: "http://citizen-services:8080/"
+        dashboard-analytics: "http://dashboard-analytics.egov:8080/"
+        dashboard-ingest: "http://dashboard-ingest.egov:8080/"
+        demand-services: "http://demand-services:8080/"
+        data-sync-employee: "http://data-sync-employee:8080/"
+        egov-common-masters: "http://egov-common-masters:8080/"
+        egf-masters: "http://egf-masters:8080/"
+        egf-master: "http://egf-master:8080/"
+        egf-instrument: "http://egf-instrument:8080/"
+        egf-voucher: "http://egf-voucher:8080/"
+        egf-bill: "http://egf-bill:8080/"
+        egov-enc-service: "http://egov-enc-service.egov:8080/"
+        egf-voucher-workflow: "http://egf-voucher-workflow:8080/"
+        egov-accesscontrol: "http://egov-accesscontrol:8080/"
+        egov-user: "http://egov-user:8080/"
+        egov-user-egov: "http://egov-user.egov:8080/"
+        egov-location: "http://egov-location:8080/"
+        egov-filestore: "http://egov-filestore:8080/"
+        egov-localization: "http://egov-localization:8080/"
+        egov-idgen: "http://egov-idgen:8080/"
+        egov-otp: "http://egov-otp:8080/"
+        egov-mdms-service: "http://mdms-v2:8080/"
+        mdms-v2: "http://mdms-v2:8080/"
+        egov-workflow: "http://egov-workflow:8080/"
+        egov-workflow-v2: "http://egov-workflow-v2:8080/"
+        egov-searcher: "http://egov-searcher:8080/"
+        egov-data-uploader: "http://egov-data-uploader:8080/"
+        egov-indexer: "http://egov-indexer:8080/"
+        egov-hrms: "http://egov-hrms:8080/"
+        es-client: "http://elasticsearch-data-v1.es-cluster:9200"
+        health-attendance: "http://health-attendance:8080/"
+        location: "http://location:8080/"
+        performance-assessment: "http://performance-assessment:8080/"
+        pdf-service: "http://pdf-service.egov:8080/"
+        report: "http://report:8080/"
+        user-otp: "http://user-otp:8080/"
+        minio-url: "https://minio-uat.digit.org/"
+        zuul: "http://zuul:8080/"
+        egov-url-shortening: "http://egov-url-shortening:8080/"
+        inbox: "http://inbox.egov:8080/"
+        pgr-services: "http://pgr-services.egov:8080/"
+        egov-pdf: "http://egov-pdf.egov:8080/"
+        audit-service: "http://audit-service:8080/"
+        project: "http://project:8080/"
+        product: "http://product:8080/"
+        household: "http://household:8080/"
+        individual: "http://individual:8080/"
+        stock: "http://stock:8080/"
+        facility: "http://facility:8080/"
+        service-request: "http://service-request:8080/"
 employee:
   dashboard-url: "https://dashboard-pbuat.egovernments.org/s/w---s/app/kibana#/dashboard/4e687470-f3c7-11e8-8d09-b151e2b1cf8e?embed=true&_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A300000)%2Ctime%3A(from%3Anow-15m%2Cmode%3Aquick%2Cto%3Anow))"
   custom-js-injection: |
@@ -231,7 +231,7 @@ audit-service:
   persist-yml-path: "https://raw.githubusercontent.com/egovernments/configs/UNIFIED-DEV/works/egov-persister/attendance-service-persister.yml,https://raw.githubusercontent.com/egovernments/configs/UNIFIED-DEV/works/egov-persister/muster-service-persister.yml,https://raw.githubusercontent.com/egovernments/configs/UNIFIED-DEV/works/egov-persister/estimate-service.yml,https://raw.githubusercontent.com/egovernments/configs/UNIFIED-DEV/works/egov-persister/contract-service-persister.yml,https://raw.githubusercontent.com/egovernments/configs/UNIFIED-DEV/works/egov-persister/bankaccounts-persister.yml,https://raw.githubusercontent.com/egovernments/configs/UNIFIED-DEV/works/egov-persister/expense-bill-payment-persister.yaml,https://raw.githubusercontent.com/egovernments/configs/UNIFIED-DEV/egov-persister/mdms-persister.yml,https://raw.githubusercontent.com/egovernments/health-campaign-config/DEMO/egov-persister/boundary-persister.yml"
   initContainers:
     gitSync:
-      repo: "git@github.com:egovernments/configs" 
+      repo: "git@github.com:egovernments/configs"
       branch: "UNIFIED-DEV"
 
 egov-pg-service:
@@ -257,7 +257,7 @@ egov-indexer:
   memory_limits: "768Mi"
   initContainers:
     gitSync:
-      repo: "git@github.com:sivajiganesh-dev/health-campaign-mdms"        ##### Change repo url with Your fork Repo url
+      repo: "git@github.com:sivajiganesh-dev/health-campaign-config"        ##### Change repo url with Your fork Repo url
       branch: "DEMO"                                      ##### Change repo branch with Your fork Repo branch
   egov-indexer-yaml-repo-path: "file:///work-dir/health-campaign-config/egov-indexer/error-queue.yml,file:///work-dir/health-campaign-config/egov-indexer/product-indexer.yml,file:///work-dir/health-campaign-config/egov-indexer/project-indexer.yml,file:///work-dir/health-campaign-config/egov-indexer/individual-indexer.yml,file:///work-dir/health-campaign-config/egov-indexer/household-indexer.yml,file:///work-dir/health-campaign-config/egov-indexer/project-task-indexer.yml,file:///work-dir/health-campaign-config/egov-indexer/stock-indexer.yml,file:///work-dir/health-campaign-config/egov-indexer/facility-indexer.yml,file:///work-dir/health-campaign-config/egov-indexer/project-staff-indexer.yml,file:///work-dir/health-campaign-config/egov-indexer/egov-error-queue-indexer.yml,file:///work-dir/health-campaign-config/egov-indexer/pgr-services.yml,file:///work-dir/health-campaign-config/egov-indexer/service-request-indexer.yml,file:///work-dir/health-campaign-config/egov-indexer/referral-management-indexer.yml"
 
@@ -270,34 +270,34 @@ egov-persister:
 
   initContainers:
     gitSync:
-      repo: "git@github.com:sivajiganesh-dev/health-campaign-mdms"      ##### Change repo url with Your fork Repo url
+      repo: "git@github.com:sivajiganesh-dev/health-campaign-config"      ##### Change repo url with Your fork Repo url
       branch: "DEMO"                                    ##### Change repo branch with Your fork Repo branch
 
 egov-data-uploader:
   initContainers:
     gitSync:
-      repo: "git@github.com:sivajiganesh-dev/health-campaign-mdms"      ##### Change repo url with Your fork Repo url
+      repo: "git@github.com:egovernments/health-campaign-config"      ##### Change repo url with Your fork Repo url
       branch: "DEMO"                                    ##### Change repo branch with Your fork Repo branch
 
 egov-searcher:
   search-yaml-path: ""
   initContainers:
     gitSync:
-      repo: "git@github.com:sivajiganesh-dev/health-campaign-mdms"     ##### Change repo url with Your fork Repo url
+      repo: "git@github.com:egovernments/health-campaign-config"     ##### Change repo url with Your fork Repo url
       branch: "DEMO"                                   ##### Change repo branch with Your fork Repo branch
 
 dashboard-analytics:
   config-schema-paths: "file:///work-dir/health-campaign-config/egov-dss-dashboards/dashboard-analytics/*.json"
   initContainers:
     gitSync:
-      repo: "git@github.com:sivajiganesh-dev/health-campaign-mdms"      ##### Change repo url with Your fork Repo url
+      repo: "git@github.com:egovernments/health-campaign-config"      ##### Change repo url with Your fork Repo url
       branch: "DEMO"                                    ##### Change repo branch with Your fork Repo branch
 
 dashboard-ingest:
   config-schema-paths: "file:///work-dir/health-campaign-config/egov-dss-dashboards/dashboard-ingest/*.json"
   initContainers:
     gitSync:
-      repo: "git@github.com:sivajiganesh-dev/health-campaign-mdms"      ##### Change repo url with Your fork Repo url
+      repo: "git@github.com:egovernments/health-campaign-config"      ##### Change repo url with Your fork Repo url
       branch: "DEMO"
 
 # reportinfra >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -307,14 +307,14 @@ report:
   spring-datasource-tomcat-max-active: 5
   initContainers:
     gitSync:
-      repo: "git@github.com:sivajiganesh-dev/health-campaign-mdms"     ##### Change repo url with Your fork Repo url
+      repo: "git@github.com:egovernments/health-campaign-config"     ##### Change repo url with Your fork Repo url
       branch: "DEMO"                                   ##### Change repo branch with Your fork Repo branch
   report-locationsfile-path: "file:///work-dir/health-campaign-config/reports/reportFileLocationsv1.txt"
 
 pdf-service:
   initContainers:
     gitSync:
-      repo: "git@github.com:sivajiganesh-dev/health-campaign-mdms"     ##### Change repo url with Your fork Repo url
+      repo: "git@github.com:egovernments/health-campaign-config"     ##### Change repo url with Your fork Repo url
       branch: "DEMO"                                   ##### Change repo branch with Your fork Repo branch
   data-config-urls: "file:///work-dir/health-campaign-config/pdf-service/data-config/tradelicense-receipt.json,file:///work-dir/health-campaign-config/pdf-service/data-config/property-receipt.json,file:///work-dir/health-campaign-config/pdf-service/data-config/property-bill.json,file:///work-dir/health-campaign-config/pdf-service/data-config/tradelicense-bill.json,file:///work-dir/health-campaign-config/pdf-service/data-config/firenoc-receipt.json,file:///work-dir/health-campaign-config/pdf-service/data-config/pt-receipt.json,file:///work-dir/health-campaign-config/pdf-service/data-config/tl-receipt.json,file:///work-dir/health-campaign-config/pdf-service/data-config/consolidatedbill.json,file:///work-dir/health-campaign-config/pdf-service/data-config/consolidatedreceipt.json,file:///work-dir/health-campaign-config/pdf-service/data-config/tlapplication.json,file:///work-dir/health-campaign-config/pdf-service/data-config/passvehicle-certificate.json,file:///work-dir/health-campaign-config/pdf-service/data-config/ws-consolidatedacknowlegment.json,file:///work-dir/health-campaign-config/pdf-service/data-config/ws-consolidatedsewerageconnection.json,file:///work-dir/health-campaign-config/pdf-service/data-config/buildingpermit.json,file:///work-dir/health-campaign-config/pdf-service/data-config/ptmutationcertificate.json,file:///work-dir/health-campaign-config/pdf-service/data-config/tlrenewalcertificate.json,file:///work-dir/health-campaign-config/pdf-service/data-config/bpa-revocation.json,file:///work-dir/health-campaign-config/pdf-service/data-config/buildingpermit-low.json,file:///work-dir/health-campaign-config/pdf-service/data-config/misc-receipt.json,file:///work-dir/health-campaign-config/pdf-service/data-config/ws-applicationwater.json,file:///work-dir/health-campaign-config/pdf-service/data-config/ws-sanctionletter.json,file:///work-dir/health-campaign-config/pdf-service/data-config/ws-estimationnotice.json,file:///work-dir/health-campaign-config/pdf-service/data-config/ws-applicationsewerage.json,file:///work-dir/health-campaign-config/pdf-service/data-config/tlcertificate.json"
   format-config-urls: "file:///work-dir/health-campaign-config/pdf-service/format-config/tradelicense-receipt.json,file:///work-dir/health-campaign-config/pdf-service/format-config/property-receipt.json,file:///work-dir/health-campaign-config/pdf-service/format-config/property-bill.json,file:///work-dir/health-campaign-config/pdf-service/format-config/tradelicense-bill.json,file:///work-dir/health-campaign-config/pdf-service/format-config/firenoc-receipt.json,file:///work-dir/health-campaign-config/pdf-service/format-config/pt-receipt.json,file:///work-dir/health-campaign-config/pdf-service/format-config/tl-receipt.json,file:///work-dir/health-campaign-config/pdf-service/format-config/consolidatedbill.json,file:///work-dir/health-campaign-config/pdf-service/format-config/consolidatedreceipt.json,file:///work-dir/health-campaign-config/pdf-service/format-config/tlapplication.json,file:///work-dir/health-campaign-config/pdf-service/format-config/passvehicle-certificate.json,file:///work-dir/health-campaign-config/pdf-service/format-config/ws-consolidatedacknowlegment.json,file:///work-dir/health-campaign-config/pdf-service/format-config/ws-consolidatedsewerageconnection.json,file:///work-dir/health-campaign-config/pdf-service/format-config/buildingpermit.json,file:///work-dir/health-campaign-config/pdf-service/format-config/ptmutationcertificate.json,file:///work-dir/health-campaign-config/pdf-service/format-config/tlrenewalcertificate.json,file:///work-dir/health-campaign-config/pdf-service/format-config/bpa-revocation.json,file:///work-dir/health-campaign-config/pdf-service/format-config/buildingpermit-low.json,file:///work-dir/health-campaign-config/pdf-service/format-config/misc-receipt.json,file:///work-dir/health-campaign-config/pdf-service/format-config/ws-applicationwater.json,file:///work-dir/health-campaign-config/pdf-service/format-config/ws-sanctionletter.json,file:///work-dir/health-campaign-config/pdf-service/format-config/ws-estimationnotice.json,file:///work-dir/health-campaign-config/pdf-service/format-config/ws-applicationsewerage.json,file:///work-dir/health-campaign-config/pdf-service/format-config/tlcertificate.json"
@@ -592,7 +592,7 @@ fluent-bit:
 ### Kafka Connect <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 kafka-connect:
   image:
-    tag: "7.5.2"  
+    tag: "7.5.2"
 
 # es-v1-cluster AWS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 elasticsearch-data-v1:
@@ -632,7 +632,7 @@ elasticsearch-master-v1:
         zone: <zone> ##REPLACE: add zone
       - volumeId: "<elasticsearch-master_volume_id_3>" ## REPLACE: add volume id
         zone: <zone> ## REPLACE: add zone
- 
+
   esJavaOpts: "-Xmx448m -Xms448m"
   resources:
     requests:
