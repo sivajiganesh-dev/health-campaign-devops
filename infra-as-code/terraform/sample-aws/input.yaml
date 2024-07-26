@@ -7,7 +7,7 @@ cluster_name: "healthtest-k8supgrade"
 ssh_key_name: "healthtest-k8supgrade-ssh-key"
 
 # Replace with public key which you want to add in your EC2 machines # ssh key which you want to add in your EC2 machines
-public_ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClTmEgWf6FCO+CVDdz79zKYuXSqANsiDHR3WHPVHtydwbXdNun917Q2Ir27Hd0/zA4r9/bowUN5nGeu1gVutDm3xjT4GQXFmHgmx09F2qLtB+LMulWs8FVE3hLPGyPpZHWbZnW8pCyFVd0X8SH+qJVs2w+0o/n3gY4Oj4wsFo0gSXLQanARgnbKIpWV23W3HD/jrS+8gixnx61+7+VFNlT4xiQL5/Quv0vR+lDsmAWJdUVHgntG1VQdzsBG+w9EHu0BO3Q5jkQNbh652YwU7xJBc6ojOLUGHKpSZq2gZxk/RnQlIdlq9DzZh0FL+qz/BaPjtJThWDEFI1DGE1idVMAx4HJDIPygP/8/abtBEL5h1+pb5HdAj+TNnE+I1pYW5gH5L7tRB4suOYAS2CT5IsqJpp/pyrDdhUXPI1j74DY6ZMhbQ+VKFjTyDldHDweR+5DRHzMkPKvV2u9bndljAIraah4YdsbAYL0vibfTrAbV3DhSTtjbRytJMV7yZ9o5sU= user@sg"
+public_ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCL+0GYz3K7PoK5Wip4YTEggIEBVu67Rki3aFIMA4Vg/lfC63oGrEbyThhvvbVxfn7bxnoMMYa61l0T3vGJQsEJxZIogq7LriUnmlpC2HHU5EIpgCPluBwBVFtR1eNlvw0UZAfOdqpEBrH9d66MY6BSBmGvqJAsKAbC0MqsXdie0bDOriVycGYnD+nC9F8o0CoCF0MWKGnP6NaDzprZsREbvMXFyw0ntLQdPMpRJ5Uv+A8IhyiBmvS7YNB3FYG0y4UhyCjrOChEnHtSn7CR2rJzEEYY1iRwkfrps+HyZb+3cTCzVtA1I5epBWCXEyeTraZ5KDjHkfqOfp6C6NAkt4Ct"
 
 # Name you want to give to your Database
 # DB name must contain only alphanumeric characters
