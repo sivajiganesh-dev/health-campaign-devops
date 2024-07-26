@@ -283,7 +283,7 @@ egov-searcher:
   search-yaml-path: ""
   initContainers:
     gitSync:
-      repo: "git@github.com:sivajiganesh-dev/health-campaign-mdms.git"     ##### Change repo url with Your fork Repo url
+      repo: "git@github.com:sivajiganesh-dev/health-campaign-mdms"     ##### Change repo url with Your fork Repo url
       branch: "DEMO"                                   ##### Change repo branch with Your fork Repo branch
 
 dashboard-analytics:
