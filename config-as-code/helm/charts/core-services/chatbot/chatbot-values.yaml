@@ -83,6 +83,10 @@ env: |
         key: zuul
   - name: EGOV_MDMS_SEARCH_ENDPOINT
     value: "/mdms-v2/v1/_search"
+  - name: EGOV_MDMS_PATH
+    value: "/mdms-v2/v1/_search"
+  - name: MDMS_PATH
+    value: "/mdms-v2/v1/_search"
   - name: SPRING_FLYWAY_ENABLED
     value: "false"
   - name: SERVER_SERVLET_CONTEXT_PATH

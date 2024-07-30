@@ -99,6 +99,10 @@ env: |
         key: egov-user
   - name: EGOV_MDMS_SEARCH_ENDPOINT
     value: "/mdms-v2/v1/_search"
+  - name: EGOV_MDMS_PATH
+    value: "/mdms-v2/v1/_search"
+  - name: MDMS_PATH
+    value: "/mdms-v2/v1/_search"
   - name: PGR_KAFKA_CREATE_TOPIC
     value: "save-pgr-request"
   - name: PGR_KAFKA_UPDATE_TOPIC

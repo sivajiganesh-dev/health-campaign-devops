@@ -89,6 +89,8 @@ env: |
     value: "/mdms-v2/v1/_search"
   - name: EGOV_MDMS_PATH
     value: "/mdms-v2/v1/_search"
+  - name: MDMS_PATH
+    value: "/mdms-v2/v1/_search"
   - name: EGOV_ENC_HOST
     valueFrom:
       configMapKeyRef:
